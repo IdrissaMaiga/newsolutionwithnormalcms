@@ -1,0 +1,1664 @@
+{
+  "name": "FamilyTreeProject Theme",
+  "displayName": "FamilyTreeProject Theme",
+  "description": "Orchard Skills FamilyTreeProject.",
+  "author": "Orchard Skills",
+  "website": "https://OrchardSkills.com",
+  "version": "1.0.0-rc2",
+  "issetuprecipe": true,
+  "categories": [ "default" ],
+  "tags": [ "FamilyTreeProject" ],
+  "steps": [
+    {
+      "name": "Settings",
+      "AdminSettings": {
+        "DisplayThemeToggler": true,
+        "DisplayMenuFilter": false,
+        "DisplayNewMenu": false,
+        "DisplayTitlesInTopbar": false
+      }
+    },
+    {
+      "name": "Feature",
+      "enable": [
+        "Application.Default",
+        "FamilyTree.Web",
+        "OrchardCore.Liquid",
+        "OrchardCore.Settings",
+        "OrchardCore.Contents",
+        "OrchardCore.ContentTypes",
+        "OrchardCore.Shortcodes",
+        "OrchardCore.ContentFields",
+        "OrchardCore.Admin",
+        "OrchardCore.Html",
+        "OrchardCore.Recipes.Core",
+        "OrchardCore.Title",
+        "OrchardCore.Templates",
+        "OrchardCore.Alias",
+        "OrchardCore.Autoroute",
+        "OrchardCore.Scripting",
+        "OrchardCore.Recipes",
+        "OrchardCore.Roles.Core",
+        "OrchardCore.Users",
+        "OrchardCore.ContentPreview",
+        "OrchardCore.Deployment",
+        "OrchardCore.CustomSettings",
+        "OrchardCore.Deployment.Remote",
+        "OrchardCore.Diagnostics",
+        "OrchardCore.DynamicCache",
+        "OrchardCore.Resources",
+        "OrchardCore.Widgets",
+        "OrchardCore.Features",
+        "OrchardCore.Flows",
+        "OrchardCore.HomeRoute",
+        "OrchardCore.Rules",
+        "OrchardCore.Layers",
+        "OrchardCore.Lists",
+        "OrchardCore.Markdown",
+        "OrchardCore.Media",
+        "OrchardCore.Menu",
+        "OrchardCore.Navigation",
+        "OrchardCore.Placements",
+        "OrchardCore.Queries",
+        "OrchardCore.Roles",
+        "OrchardCore.Security",
+        "OrchardCore.Shortcodes.Templates",
+        "OrchardCore.Themes",
+        "FamilyTreeProject.Theme",
+        "FamilyTreeProject",
+        "TheAdmin",
+        "FamilyTreeProject Theme"
+      ],
+      "disable": [
+        "FamilyTreeProject.Core",
+        "OrchardCore.AdminDashboard",
+        "OrchardCore.AdminMenu",
+        "OrchardCore.AdminTemplates",
+        "OrchardCore.Apis.GraphQL",
+        "OrchardCore.ArchiveLater",
+        "OrchardCore.AuditTrail",
+        "OrchardCore.Setup",
+        "OrchardCore.AutoSetup",
+        "OrchardCore.BackgroundTasks",
+        "OrchardCore.ContentFields.Indexing.SQL",
+        "OrchardCore.ContentFields.Indexing.SQL.UserPicker",
+        "OrchardCore.Localization",
+        "OrchardCore.ContentLocalization",
+        "OrchardCore.ContentLocalization.ContentCulturePicker",
+        "OrchardCore.Sitemaps",
+        "OrchardCore.ContentLocalization.Sitemaps",
+        "OrchardCore.Contents.Deployment.AddToDeploymentPlan",
+        "OrchardCore.Contents.Deployment.Download",
+        "OrchardCore.Contents.Deployment.ExportContentToDeploymentTarget",
+        "OrchardCore.Contents.FileContentDefinition",
+        "OrchardCore.Cors",
+        "OrchardCore.DataProtection.Azure",
+        "OrchardCore.Email",
+        "OrchardCore.Facebook",
+        "OrchardCore.Facebook.Login",
+        "OrchardCore.Facebook.Pixel",
+        "OrchardCore.Facebook.Widgets",
+        "OrchardCore.Feeds",
+        "OrchardCore.Forms",
+        "OrchardCore.GitHub.Authentication",
+        "OrchardCore.Google.Analytics",
+        "OrchardCore.Google.GoogleAuthentication",
+        "OrchardCore.Google.TagManager",
+        "OrchardCore.HealthChecks",
+        "OrchardCore.Https",
+        "OrchardCore.Indexing",
+        "OrchardCore.Localization.AdminCulturePicker",
+        "OrchardCore.Localization.ContentLanguageHeader",
+        "OrchardCore.Media.Cache",
+        "OrchardCore.Media.AmazonS3",
+        "OrchardCore.Media.Azure.Storage",
+        "OrchardCore.Media.Indexing",
+        "OrchardCore.Media.Slugify",
+        "OrchardCore.Microsoft.Authentication.AzureAD",
+        "OrchardCore.Microsoft.Authentication.MicrosoftAccount",
+        "OrchardCore.MiniProfiler",
+        "OrchardCore.Notifications",
+        "OrchardCore.Notifications.Email",
+        "OrchardCore.Sms",
+        "OrchardCore.Notifications.Sms",
+        "OrchardCore.OpenId",
+        "OrchardCore.OpenId.Client",
+        "OrchardCore.OpenId.Management",
+        "OrchardCore.OpenId.Server",
+        "OrchardCore.OpenId.Validation",
+        "OrchardCore.Placements.FileStorage",
+        "OrchardCore.PublishLater",
+        "OrchardCore.Queries.Sql",
+        "OrchardCore.ReCaptcha",
+        "OrchardCore.ReCaptcha.Users",
+        "OrchardCore.Redis",
+        "OrchardCore.Redis.Bus",
+        "OrchardCore.Redis.Cache",
+        "OrchardCore.Redis.DataProtection",
+        "OrchardCore.Redis.Lock",
+        "OrchardCore.XmlRpc",
+        "OrchardCore.RemotePublishing",
+        "OrchardCore.ResponseCompression",
+        "OrchardCore.ReverseProxy",
+        "OrchardCore.Search",
+        "OrchardCore.Search.Elasticsearch",
+        "OrchardCore.Search.Elasticsearch.ContentPicker",
+        "OrchardCore.Search.Elasticsearch.Worker",
+        "OrchardCore.Search.Lucene",
+        "OrchardCore.Search.Lucene.ContentPicker",
+        "OrchardCore.Search.Lucene.Worker",
+        "OrchardCore.Seo",
+        "OrchardCore.Sitemaps.Cleanup",
+        "OrchardCore.Sitemaps.RazorPages",
+        "OrchardCore.Spatial",
+        "OrchardCore.Taxonomies",
+        "OrchardCore.Taxonomies.ContentsAdminList",
+        "OrchardCore.Tenants",
+        "OrchardCore.Tenants.Distributed",
+        "OrchardCore.Tenants.FeatureProfiles",
+        "OrchardCore.Tenants.FileProvider",
+        "OrchardCore.Twitter",
+        "OrchardCore.Twitter.Signin",
+        "OrchardCore.Users.2FA",
+        "OrchardCore.Users.2FA.AuthenticatorApp",
+        "OrchardCore.Users.2FA.Email",
+        "OrchardCore.Users.2FA.Sms",
+        "OrchardCore.Users.AuditTrail",
+        "OrchardCore.Users.Authentication.CacheTicketStore",
+        "OrchardCore.Users.ChangeEmail",
+        "OrchardCore.Users.CustomUserSettings",
+        "OrchardCore.Users.Registration",
+        "OrchardCore.Users.ResetPassword",
+        "OrchardCore.Users.TimeZone",
+        "OrchardCore.Workflows",
+        "OrchardCore.Workflows.Http",
+        "OrchardCore.Workflows.Session",
+        "OrchardCore.Workflows.Timers",
+        "TheBlogTheme",
+        "TheComingSoonTheme",
+        "TheTheme"
+      ]
+    },
+    {
+      "name": "Layers",
+      "Layers": [
+        {
+          "Name": "Always",
+          "Rule": null,
+          "Description": "The widgets in this layer are displayed on any page of this site.",
+          "LayerRule": {
+            "Conditions": [
+              {
+                "$type": "OrchardCore.Rules.Models.BooleanCondition, OrchardCore.Rules",
+                "Value": true,
+                "Name": "BooleanCondition",
+                "ConditionId": "47w3paxz2914d561fg6cs5jfwn"
+              }
+            ],
+            "Name": null,
+            "ConditionId": "4yg2rbkfx5eyxv6zzpj465zgwh"
+          }
+        },
+        {
+          "Name": "Homepage",
+          "Rule": null,
+          "Description": "The widgets in this layer are only displayed on the homepage.",
+          "LayerRule": {
+            "Conditions": [
+              {
+                "$type": "OrchardCore.Rules.Models.HomepageCondition, OrchardCore.Rules",
+                "Value": true,
+                "Name": "HomepageCondition",
+                "ConditionId": "43y5wnaz85ehe422b6gx62dhc4"
+              }
+            ],
+            "Name": null,
+            "ConditionId": "4mpqpevag07gf3f27cqsy6vtnt"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Settings",
+      "LayerSettings": {
+        "Zones": [
+          "Footer",
+          "Header"
+        ]
+      }
+    },
+    {
+      "name": "ContentDefinition",
+      "ContentTypes": [
+        {
+          "Name": "Menu",
+          "DisplayName": "Menu",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Listable": true,
+              "Draftable": true,
+              "Versionable": true
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "AliasPart",
+              "Name": "AliasPart",
+              "Settings": {
+                "AliasPartSettings": {
+                  "Pattern": "{{ ContentItem | display_text | slugify }}"
+                },
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "PartName": "MenuPart",
+              "Name": "MenuPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "2"
+                }
+              }
+            },
+            {
+              "PartName": "MenuItemsListPart",
+              "Name": "MenuItemsListPart",
+              "Settings": {}
+            }
+          ]
+        },
+        {
+          "Name": "LinkMenuItem",
+          "DisplayName": "Link Menu Item",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Stereotype": "MenuItem"
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "LinkMenuItemPart",
+              "Name": "LinkMenuItemPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "LinkMenuItem",
+              "Name": "LinkMenuItem",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "ContentMenuItem",
+          "DisplayName": "Content Menu Item",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Stereotype": "MenuItem"
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "ContentMenuItemPart",
+              "Name": "ContentMenuItemPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "ContentMenuItem",
+              "Name": "ContentMenuItem",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "HtmlMenuItem",
+          "DisplayName": "Html Menu Item",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Stereotype": "MenuItem"
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "HtmlMenuItemPart",
+              "Name": "HtmlMenuItemPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "HtmlMenuItem",
+              "Name": "HtmlMenuItem",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Page",
+          "DisplayName": "Page",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": true,
+              "Listable": true,
+              "Draftable": true,
+              "Versionable": true,
+              "Securable": true
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Page",
+              "Name": "Page",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "3"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                },
+                "AutoroutePartSettings": {
+                  "AllowCustomPath": true,
+                  "Pattern": "{{ Model.ContentItem | display_text | slugify }}",
+                  "ShowHomepageOption": true
+                }
+              }
+            },
+            {
+              "PartName": "FlowPart",
+              "Name": "FlowPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "2"
+                }
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "LiquidPart",
+              "Name": "LiquidPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "3"
+                }
+              }
+            },
+            {
+              "PartName": "HtmlBodyPart",
+              "Name": "HtmlBodyPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "LandingPage",
+          "DisplayName": "Landing Page",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": true,
+              "Listable": true,
+              "Draftable": true,
+              "Versionable": true,
+              "Securable": true
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "LandingPage",
+              "Name": "LandingPage",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "8"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "AutoroutePartSettings": {
+                  "AllowCustomPath": true,
+                  "Pattern": "{{ Model.ContentItem | display_text | slugify }}",
+                  "ShowHomepageOption": true
+                },
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "AliasPart",
+              "Name": "AliasPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "2"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "RawHtml",
+          "DisplayName": "Html",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Draftable": true,
+              "Versionable": true,
+              "Securable": true,
+              "Stereotype": "Widget"
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "RawHtml",
+              "Name": "RawHtml",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Container",
+          "DisplayName": "Container",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Draftable": true,
+              "Versionable": true,
+              "Securable": true,
+              "Stereotype": "Widget"
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Container",
+              "Name": "Container",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "FlowPart",
+              "Name": "FlowPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Image",
+          "DisplayName": "Image",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Draftable": true,
+              "Versionable": true,
+              "Securable": true,
+              "Stereotype": "Widget"
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Image",
+              "Name": "Image",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "FamilyTree",
+          "DisplayName": "FamilyTree",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": true,
+              "Listable": true,
+              "Draftable": true,
+              "Versionable": true,
+              "Securable": true
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "FamilyTree",
+              "Name": "FamilyTree",
+              "Settings": {}
+            },
+            {
+              "PartName": "AliasPart",
+              "Name": "AliasPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "PartName": "BagPart",
+              "Name": "BagPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "DisplayName": "Bag",
+                  "Description": "Provides a collection behavior for your content item where you can place other content items.",
+                  "Position": "2"
+                },
+                "BagPartSettings": {
+                  "ContainedContentTypes": [
+                    "Person"
+                  ],
+                  "ContainedStereotypes": []
+                }
+              }
+            },
+            {
+              "PartName": "FlowPart",
+              "Name": "FlowPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "3"
+                }
+              }
+            },
+            {
+              "PartName": "LiquidPart",
+              "Name": "LiquidPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "4"
+                }
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Person",
+          "DisplayName": "Person",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": true,
+              "Listable": true,
+              "Draftable": true,
+              "Versionable": true,
+              "Securable": true
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Person",
+              "Name": "Person",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "5"
+                }
+              }
+            },
+            {
+              "PartName": "AliasPart",
+              "Name": "AliasPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "2"
+                }
+              }
+            },
+            {
+              "PartName": "HtmlBodyPart",
+              "Name": "HtmlBodyPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "3",
+                  "Editor": "Wysiwyg"
+                },
+                "HtmlBodyPartSettings": {}
+              }
+            },
+            {
+              "PartName": "LiquidPart",
+              "Name": "LiquidPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "4"
+                }
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "ContentParts": [
+        {
+          "Name": "LiquidPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "Provides a Liquid formatted body for your content item."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "CommonPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "Provides an editor for the common properties of a content item."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "HtmlBodyPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "Provides an HTML Body for your content item."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "TitlePart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "Provides a Title for your content item.",
+              "DefaultPosition": "0"
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "AliasPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "Provides a way to define custom aliases for content items."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "AutoroutePart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "Provides a custom url for your content item."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "PreviewPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "Provides a way to define the url that is used to render your content item for preview. You only need to use this for the content preview feature when running the frontend decoupled from the admin."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "WidgetsListPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "Provides a way to add widgets to Layout zones for your content item."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "FlowPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "Provides a customizable body for your content item where you can build a content structure with widgets."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "BagPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Reusable": true,
+              "Description": "Provides a collection behavior for your content item where you can place other content items."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "ListPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "Add a list behavior."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "MarkdownBodyPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "Provides a Markdown formatted body for your content item."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "MenuPart",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "MenuItemPart",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "LinkMenuItemPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "Provides a menu link behavior for your content item."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "ContentMenuItemPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "DisplayName": "Content Menu Item",
+              "Description": "Provides a menu link behavior with the Content Picker for your content item."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "ContentPickerField",
+              "Name": "SelectedContentItem",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Selected Content Item",
+                  "Position": "0"
+                },
+                "ContentPickerFieldSettings": {
+                  "Required": true,
+                  "DisplayAllContentTypes": true,
+                  "DisplayedContentTypes": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "HtmlMenuItemPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "DisplayName": "Html Menu Item",
+              "Description": "Provides a menu link behavior with a field to display html for the link text."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "RawHtml",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "HtmlField",
+              "Name": "Content",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Content",
+                  "Editor": "Multiline",
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Image",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true
+            }
+          },
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "MediaField",
+              "Name": "Media",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Image",
+                  "Position": "0"
+                },
+                "MediaFieldSettings": {
+                  "Required": true,
+                  "Multiple": false
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Caption",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Caption",
+                  "Position": "1"
+                },
+                "TextFieldSettings": {
+                  "Hint": "A description of the image used as title or alternate text"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Person",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "DateTimeField",
+              "Name": "DateOfBirth",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "DateOfBirth",
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "FieldName": "LinkField",
+              "Name": "Links",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Links",
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Generation",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Generation",
+                  "Position": "2"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Autobiography",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Autobiography",
+                  "Position": "3"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Mother",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Mother",
+                  "Position": "4"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Father",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Father",
+                  "Position": "5"
+                }
+              }
+            },
+            {
+              "FieldName": "MediaField",
+              "Name": "Galerie",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Galerie",
+                  "Position": "6"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Gender",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Gender",
+                  "Position": "7"
+                }
+              }
+            },
+            {
+              "FieldName": "DateTimeField",
+              "Name": "MariedSince",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "MariedSince",
+                  "Position": "8"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Husband",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Husband",
+                  "Position": "9"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Wife",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Wife",
+                  "Position": "10"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Address",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Address",
+                  "Position": "11"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "name": "Templates",
+      "Templates": {
+        "Content__LandingPage": {
+          "Content": "\r\n    {% shape \"familyt\" %}\r\n\r\n\r\n \r\n\r\n  \r\n\r\n\r\n\r\n  <!-- Contact Section -->\r\n  <section class=\"page-section\" id=\"contact\">\r\n    <div class=\"container\">\r\n      <div class=\"row justify-content-center\">\r\n        <div class=\"col-lg-8 text-center\">\r\n          <h2 class=\"mt-0\">Let's Get In Touch!</h2>\r\n          <hr class=\"divider my-4\">\r\n          <p class=\"text-muted mb-5\">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>\r\n        </div>\r\n      </div>\r\n      <div class=\"row\">\r\n        <div class=\"col-lg-4 ml-auto text-center mb-5 mb-lg-0\">\r\n          <i class=\"fas fa-phone fa-3x mb-3 text-muted\"></i>\r\n          <div>+36 301377080</div>\r\n        </div>\r\n        <div class=\"col-lg-4 mr-auto text-center\">\r\n          <i class=\"fas fa-envelope fa-3x mb-3 text-muted\"></i>\r\n          <!-- Make sure to change the email address in anchor text AND the link below! -->\r\n          <a class=\"d-block\" href=\"mailto:contact@yourwebsite.com\">maigadrisking@gmail.com</a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </section>\r\n",
+          "Description": "A template for the Landing Page content type"
+        },
+        "page_template": {
+          "Content": "@{\r\n    Layout.Title = Model.PageTitle;\r\n}\r\n\r\n<div class=\"container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <!-- Render the Liquid part -->\r\n            {{ Model.ContentItem | shape_render }}\r\n        </div>\r\n    </div>\r\n</div>",
+          "Description": "rendering the liquid part"
+        },
+        "the original": {
+          "Content": "{% shape \"familybook\" %}",
+          "Description": "rendering the liquid part"
+        }
+      }
+    },
+    {
+      "name": "Content",
+      "data": [
+        {
+          "ContentItemId": "47g5j7r56zwnw1z5gaf1qgk1xf",
+          "ContentItemVersionId": "41a9nnpy20fp6xhh6wyb0xex4t",
+          "ContentType": "HtmlDashboardWidget",
+          "DisplayText": "Orchard Core",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2024-03-30T22:02:27.9128884Z",
+          "PublishedUtc": "2024-03-30T22:02:27.9206753Z",
+          "CreatedUtc": "2024-03-30T22:02:27.90139Z",
+          "Owner": "42hmjpfe68m2nx6v4qzxde6zwp",
+          "Author": "admin2",
+          "HtmlDashboardWidget": {},
+          "DashboardPart": {
+            "Position": 0.0,
+            "Width": 1.0,
+            "Height": 2.0
+          },
+          "HtmlBodyPart": {
+            "Html": "<ul class=\"list-group list-group-flush\">\n\t<li class=\"list-group-item\"><a href=\"https://orchardcore.net\" target=\"_blank\">Orchard Core site</a></li>\n\t<li class=\"list-group-item\"><a href=\"https://docs.orchardcore.net\" target=\"_blank\">Orchard Core docs</a></li>\n\t<li class=\"list-group-item\"><a href=\"https://github.com/OrchardCMS/OrchardCore\" target=\"_blank\">Orchard Core repo</a></li>\n\t<li class=\"list-group-item\"><a href=\"https://gitter.im/OrchardCMS/OrchardCore\" target=\"_blank\">Orchard Core chat</a></li>\n</ul>"
+          },
+          "TitlePart": {
+            "Title": "Orchard Core"
+          }
+        },
+        {
+          "ContentItemId": "496186rxvyrvvzagr49ktk2mca",
+          "ContentItemVersionId": "45tztp1n4g43fxgtm7xj5m9bdn",
+          "ContentType": "Page",
+          "DisplayText": "FamilyBook",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2024-03-30T22:31:15.4135429Z",
+          "PublishedUtc": "2024-03-30T22:31:15.4305803Z",
+          "CreatedUtc": "2024-03-30T22:06:06.3967736Z",
+          "Owner": "42hmjpfe68m2nx6v4qzxde6zwp",
+          "Author": "admin2",
+          "Page": {},
+          "AutoroutePart": {
+            "Path": "familybook",
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false
+          },
+          "FlowPart": {
+            "Widgets": [
+              {
+                "ContentItemId": "4dt9dtkh3gy9x54s8rdty6t4nq",
+                "ContentItemVersionId": null,
+                "ContentType": "Blockquote",
+                "DisplayText": null,
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2024-03-30T22:31:15.4220018Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin2",
+                "Blockquote": {
+                  "Quote": {
+                    "Text": "efwfwefwefewfe"
+                  }
+                },
+                "FlowMetadata": {
+                  "Alignment": 3,
+                  "Size": 100
+                }
+              }
+            ]
+          },
+          "TitlePart": {
+            "Title": "FamilyBook"
+          }
+        },
+        {
+          "ContentItemId": "44c0j0dqw8ffr7jcjr4tndavx4",
+          "ContentItemVersionId": "41yxbdpj28zxtwde9a7h5c3hwd",
+          "ContentType": "RawHtml",
+          "DisplayText": "Footer",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2024-04-06T20:35:06.5039807Z",
+          "PublishedUtc": "2024-04-06T20:35:06.6926615Z",
+          "CreatedUtc": "2024-03-29T05:23:37.4643094Z",
+          "Owner": "42hmjpfe68m2nx6v4qzxde6zwp",
+          "Author": "admin2",
+          "LayerMetadata": {
+            "Layer": "Always",
+            "Zone": "Footer",
+            "RenderTitle": false,
+            "Position": 10.0
+          },
+          "RawHtml": {
+            "Content": {
+              "Html": "<footer class=\"footer py-4\">\n    <div class=\"container\">\n        <div class=\"row align-items-center\">\n            <div class=\"col-lg-4 text-lg-start\">\n                Copyright © IdrissaMaiga\n                \n                \n                \n            </div>\n            <div class=\"col-lg-4 my-3 my-lg-0\">\n                <a class=\"btn btn-dark btn-social mx-2\" href=\"#!\"><i class=\"fab fa-twitter\"></i></a>\n                <a class=\"btn btn-dark btn-social mx-2\" href=\"#!\"><i class=\"fab fa-facebook-f\"></i></a>\n                <a class=\"btn btn-dark btn-social mx-2\" href=\"#!\"><i class=\"fab fa-linkedin-in\"></i></a>\n            </div>\n            <div class=\"col-lg-4 text-lg-end\">\n                <a class=\"link-dark text-decoration-none me-3\" href=\"#!\">Privacy Policy</a>\n                <a class=\"link-dark text-decoration-none\" href=\"#!\">Terms of Use</a>\n            </div>\n        </div>\n    </div>\n</footer>"
+            }
+          }
+        },
+        {
+          "ContentItemId": "43w299yzwzy3mz1y0k3kat6q5w",
+          "ContentItemVersionId": "4xhbg0aw3bz5rtda16wk06c9d1",
+          "ContentType": "FamilyTree",
+          "DisplayText": "FamilyTree data",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2024-04-08T11:15:42.2469153Z",
+          "PublishedUtc": "2024-04-08T11:15:42.529492Z",
+          "CreatedUtc": "2024-03-30T22:11:36.3712173Z",
+          "Owner": "42hmjpfe68m2nx6v4qzxde6zwp",
+          "Author": "admin2",
+          "FamilyTree": {},
+          "AliasPart": {
+            "Alias": "familytree-data"
+          },
+          "BagPart": {
+            "ContentItems": [
+              {
+                "ContentItemId": "4snett71237qp0tkhrxnk6rf47",
+                "ContentItemVersionId": null,
+                "ContentType": "Person",
+                "DisplayText": "Idrissa Maiga",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2024-04-08T11:15:42.2850208Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": "42hmjpfe68m2nx6v4qzxde6zwp",
+                "Author": "admin2",
+                "Person": {
+                  "DateOfBirth": {
+                    "Value": null
+                  },
+                  "Links": {
+                    "Url": null,
+                    "Text": null
+                  },
+                  "Generation": {
+                    "Text": "II"
+                  },
+                  "Autobiography": {
+                    "Text": null
+                  },
+                  "Mother": {
+                    "Text": null
+                  },
+                  "Father": {
+                    "Text": null
+                  },
+                  "Galerie": {
+                    "Paths": [],
+                    "MediaTexts": []
+                  },
+                  "Gender": {
+                    "Text": null
+                  },
+                  "MariedSince": {
+                    "Value": null
+                  },
+                  "Husband": {
+                    "Text": null
+                  },
+                  "Wife": {
+                    "Text": null
+                  },
+                  "Address": {
+                    "Text": null
+                  }
+                },
+                "AliasPart": {
+                  "Alias": "idrissa-maiga"
+                },
+                "AutoroutePart": {
+                  "Path": "idrissa-maiga",
+                  "SetHomepage": false,
+                  "Disabled": false,
+                  "RouteContainedItems": false,
+                  "Absolute": false
+                },
+                "HtmlBodyPart": {
+                  "Html": ""
+                },
+                "LiquidPart": {
+                  "Liquid": null
+                },
+                "TitlePart": {
+                  "Title": "Idrissa Maiga"
+                },
+                "MarkdownBodyPart": {
+                  "Markdown": null
+                }
+              }
+            ]
+          },
+          "FlowPart": {
+            "Widgets": []
+          },
+          "LiquidPart": {
+            "Liquid": null
+          },
+          "ListPart": {},
+          "TitlePart": {
+            "Title": "FamilyTree data"
+          }
+        },
+        {
+          "ContentItemId": "4ytt652yg5yyrvfhwncy1wrq59",
+          "ContentItemVersionId": "42mwbb3btcxs779bvdm4xezjwh",
+          "ContentType": "Page",
+          "DisplayText": "Persons",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2024-04-08T11:53:52.9909716Z",
+          "PublishedUtc": "2024-04-08T11:53:53.003182Z",
+          "CreatedUtc": "2024-04-08T11:19:50.4741599Z",
+          "Owner": "42hmjpfe68m2nx6v4qzxde6zwp",
+          "Author": "admin2",
+          "Page": {},
+          "AutoroutePart": {
+            "Path": "Persons",
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false
+          },
+          "FlowPart": {
+            "Widgets": []
+          },
+          "TitlePart": {
+            "Title": "Persons"
+          },
+          "LiquidPart": {
+            "Liquid": " {% shape \"familybook\" %}\r\n"
+          },
+          "HtmlBodyPart": {
+            "Html": "<div>\n  hello\n</div>"
+          }
+        },
+        {
+          "ContentItemId": "4rm3mzqtg9wzayf2eeq7kdxtnh",
+          "ContentItemVersionId": "40vv2haa2rv123cp19c2x92959",
+          "ContentType": "LandingPage",
+          "DisplayText": "FamilyTreepage",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2024-04-08T11:58:04.3368766Z",
+          "PublishedUtc": "2024-04-08T11:58:04.3907005Z",
+          "CreatedUtc": "2024-03-30T22:05:31.3877891Z",
+          "Owner": "42hmjpfe68m2nx6v4qzxde6zwp",
+          "Author": "admin2",
+          "LandingPage": {},
+          "AutoroutePart": {
+            "Path": "index",
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false
+          },
+          "TitlePart": {
+            "Title": "FamilyTreepage"
+          },
+
+          "AliasPart": {
+            "Alias": "familytreepage"
+          },
+          "FamilyTree": {
+            "ContentItems": [
+              {
+                "ContentItemId": "4t08eqc8fe57z1w52fk6atsvd0",
+                "ContentItemVersionId": null,
+                "ContentType": "Person",
+                "DisplayText": "idrissa ",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2024-04-08T10:13:24.338006Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": "42hmjpfe68m2nx6v4qzxde6zwp",
+                "Author": "admin2",
+                "Person": {
+                  "DateOfBirth": {
+                    "Value": null
+                  },
+                  "Links": {
+                    "Url": null,
+                    "Text": null
+                  },
+                  "Generation": {
+                    "Text": "II"
+                  },
+                  "Autobiography": {
+                    "Text": null
+                  },
+                  "Mother": {
+                    "Text": null
+                  },
+                  "Father": {
+                    "Text": null
+                  },
+                  "Galerie": {
+                    "Paths": [],
+                    "MediaTexts": []
+                  },
+                  "Gender": {
+                    "Text": null
+                  },
+                  "MariedSince": {
+                    "Value": null
+                  },
+                  "Husband": {
+                    "Text": null
+                  },
+                  "Wife": {
+                    "Text": null
+                  },
+                  "Address": {
+                    "Text": null
+                  }
+                },
+                "AliasPart": {
+                  "Alias": "idrissa"
+                },
+                "AutoroutePart": {
+                  "Path": "idrissa",
+                  "SetHomepage": false,
+                  "Disabled": false,
+                  "RouteContainedItems": false,
+                  "Absolute": false
+                },
+                "HtmlBodyPart": {
+                  "Html": ""
+                },
+                "LiquidPart": {
+                  "Liquid": null
+                },
+                "TitlePart": {
+                  "Title": "idrissa "
+                }
+              }
+            ]
+          }
+        },
+        {
+          "ContentItemId": "4enqgm84gtyc0rzbvyy146adnf",
+          "ContentItemVersionId": "4gygrwr45wxtgwjr7vasra12nj",
+          "ContentType": "Menu",
+          "DisplayText": "main menu",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2024-04-08T12:03:13.0838474Z",
+          "PublishedUtc": "2024-04-08T12:03:13.0881909Z",
+          "CreatedUtc": "2024-03-30T22:20:53.1125943Z",
+          "Owner": "42hmjpfe68m2nx6v4qzxde6zwp",
+          "Author": "admin2",
+          "TitlePart": {
+            "Title": "main menu"
+          },
+          "AliasPart": {
+            "Alias": "main-menu"
+          },
+          "MenuPart": {},
+          "MenuItemsListPart": {
+            "MenuItems": [
+              {
+                "ContentItemId": "4x8ckqsp1c30f186y4m6mgq3wp",
+                "ContentItemVersionId": null,
+                "ContentType": "ContentMenuItem",
+                "DisplayText": "Tree",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2024-03-30T22:30:37.3087713Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin2",
+                "ContentMenuItemPart": {
+                  "Name": "Tree",
+                  "SelectedContentItem": {
+                    "ContentItemIds": [
+                      "4rm3mzqtg9wzayf2eeq7kdxtnh"
+                    ]
+                  }
+                },
+                "ContentMenuItem": {}
+              },
+              {
+                "ContentItemId": "4bznp1q6vfrew0vch7ta6qa0n5",
+                "ContentItemVersionId": null,
+                "ContentType": "ContentMenuItem",
+                "DisplayText": "Book",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2024-04-08T12:01:51.5073413Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin2",
+                "ContentMenuItemPart": {
+                  "Name": "Book",
+                  "SelectedContentItem": {
+                    "ContentItemIds": [
+                      "4ytt652yg5yyrvfhwncy1wrq59"
+                    ]
+                  }
+                },
+                "ContentMenuItem": {}
+              }
+            ]
+          },
+          "@WeldedPartSettings": {
+            "MenuPart": {
+              "Position": "3"
+            },
+            "MenuItemsListPart": {
+              "Position": "4"
+            }
+          }
+        },
+        {
+          "ContentItemId": "44477htse8tmr2t0mnwbh16txv",
+          "ContentItemVersionId": "45071fq9bac8j1ev8fa5j4wy5s",
+          "ContentType": "RawHtml",
+          "DisplayText": "Header",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2024-04-08T12:21:33.9683786Z",
+          "PublishedUtc": "2024-04-08T12:21:34.004391Z",
+          "CreatedUtc": "2024-04-06T20:38:34.0447248Z",
+          "Owner": "42hmjpfe68m2nx6v4qzxde6zwp",
+          "Author": "admin2",
+          "RawHtml": {
+            "Content": {
+              "Html": " <header class=\"masthead\">\n\n  </header>"
+            }
+          },
+          "LayerMetadata": {
+            "RenderTitle": false,
+            "Position": 11.0,
+            "Zone": "Header",
+            "Layer": "Always"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "Users": [
+        {
+          "Id": 12,
+          "UserId": "42hmjpfe68m2nx6v4qzxde6zwp",
+          "UserName": "admin2",
+          "Email": "maigadrinsking@gmail.com",
+          "PasswordHash": "AQAAAAIAAYagAAAAEJKAtoTQIIVernidqdf2PoSlXhqADmBdVusLx6e1JjXU2M8dIW7ZllweD3ebuR3naA==",
+          "EmailConfirmed": true,
+          "IsEnabled": true,
+          "NormalizedEmail": "MAIGADRINSKING@GMAIL.COM",
+          "NormalizedUserName": "ADMIN2",
+          "SecurityStamp": "2PWDXKDHTCXLI2NVBNL3BJVGUKBWZS6J",
+          "ResetToken": null,
+          "PhoneNumber": null,
+          "PhoneNumberConfirmed": false,
+          "TwoFactorEnabled": false,
+          "IsLockoutEnabled": true,
+          "AccessFailedCount": 0,
+          "RoleNames": [
+            "Administrator"
+          ]
+        },
+        {
+          "Id": 30,
+          "UserId": "4k7jjvhtmcnghxkdz604fha6n6",
+          "UserName": "admin3",
+          "Email": "maigadrinsking@gmail.comd",
+          "PasswordHash": "AQAAAAIAAYagAAAAEPpmA+Kw0z6JAqLHPjmI/Wid6Rq7B9dQGcVMU2w6CCvbCgUPGN5i075OSwZ8MH+TcQ==",
+          "EmailConfirmed": false,
+          "IsEnabled": true,
+          "NormalizedEmail": "MAIGADRINSKING@GMAIL.COMD",
+          "NormalizedUserName": "ADMIN3",
+          "SecurityStamp": "6SEXLAHVYWO2FKKKDXL6P4D723KQXFKB",
+          "ResetToken": null,
+          "PhoneNumber": null,
+          "PhoneNumberConfirmed": false,
+          "TwoFactorEnabled": false,
+          "IsLockoutEnabled": true,
+          "AccessFailedCount": 0,
+          "RoleNames": [
+            "Administrator"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "media",
+      "Files": [
+
+        {
+          "SourcePath": "logos/facebook.svg",
+          "TargetPath": "logos/facebook.svg"
+        },
+        {
+          "SourcePath": "logos/google.svg",
+          "TargetPath": "logos/google.svg"
+        },
+        {
+          "SourcePath": "logos/ibm.svg",
+          "TargetPath": "logos/ibm.svg"
+        },
+        {
+          "SourcePath": "logos/microsoft.svg",
+          "TargetPath": "logos/microsoft.svg"
+        }
+
+      ]
+    },
+    {
+      "name": "Themes",
+      "Site": "FamilyTreeProject.Theme",
+      "Admin": "TheAdmin"
+    },
+    {
+      "name": "Settings",
+      "BaseUrl": null,
+      "Calendar": null,
+      "MaxPagedCount": 0,
+      "MaxPageSize": 100,
+      "PageSize": 10,
+      "TimeZoneId": "Europe/Budapest",
+      "ResourceDebugMode": 0,
+      "SiteName": "FamilyTree",
+      "SiteSalt": "20fbfb24b45e43f1b05be08ee9a26e0e",
+      "PageTitleFormat": "{% page_title Site.SiteName, position: \"after\", separator: \" - \" %}",
+      "SuperUser": "42hmjpfe68m2nx6v4qzxde6zwp",
+      "UseCdn": false,
+      "CdnBaseUrl": null,
+      "HomeRoute": {
+        "Action": "Display",
+        "Controller": "Item",
+        "Area": "OrchardCore.Contents",
+        "contentItemId": "4rm3mzqtg9wzayf2eeq7kdxtnh"
+      },
+      "AppendVersion": true,
+      "CacheMode": 0
+    }
+  ]
+}

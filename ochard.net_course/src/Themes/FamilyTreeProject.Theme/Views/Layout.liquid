@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="{{ Culture.Name }}">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+    <link rel="icon" type="image/x-icon" href="/FamilyTreeProject.Theme/img/favi.ico" />
+
+  <title>{% page_title Site.SiteName %}</title>
+  {% render_section "HeadMeta", required: false %}
+
+  <!-- Font Awesome Icons -->
+  <link href="/FamilyTreeProject.Theme/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+  <!-- Plugin CSS -->
+  <link href="/FamilyTreeProject.Theme/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+  <!-- Theme CSS - Includes Bootstrap -->
+  <link href="/FamilyTreeProject.Theme/css/creative.min.css" rel="stylesheet">
+  {% resources type:"Meta" %}
+  {% resources type:"HeadLink" %}
+  {% resources type:"Stylesheet" %}
+  {% resources type:"HeadScript" %}
+  <style>
+    .footer-content {
+      background-color: orange;
+      color: white;
+      padding: 20px;
+      text-align: left;
+      width: 100%;
+      bottom: 0;
+    }
+  </style>
+</head>
+
+<body id="page-top" dir="{{ Culture.Dir }}">
+  <script>
+    function scrollToElement(elementId) {
+      var element = document.getElementById(elementId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  </script>
+
+    <header class="masthead">
+
+  <!-- Navigation  this a test-->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">{{ Site.SiteName }}Website</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        
+      </button>
+    
+           {% shape "menu", alias: "alias:main-menu", cache_id: "main-menu", cache_tag: "alias: main-menu" %}
+         
+       
+      
+    </div>
+  </nav>
+
+
+ 
+
+
+  </header>
+  <!-- Masthead -->
+
+
+
+   <!-- Maincontent -->
+  {% render_section "Content", required: false %}
+
+
+
+  <!-- Footer -->
+   {% render_section "Footer", required: false %}
+
+
+  
+  {% resources type:"FootScript" %}
+  <!-- Bootstrap core JavaScript -->
+  <script src="/FamilyTreeProject.Theme/vendor/jquery/jquery.min.js"></script>
+  <script src="/FamilyTreeProject.Theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="/FamilyTreeProject.Theme/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="/FamilyTreeProject.Theme/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="/FamilyTreeProject.Theme/js/creative.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,694 @@
+﻿
+@inject OrchardCore.IOrchardHelper Orchard
+@using FamilyTree.Web
+@using System;
+@using OrchardCore.ContentManagement;
+<style>
+    /* CSS styling for the family tree */
+    svg {
+        position: absolute;
+        /* Ensure the SVG appears on top of other elements */
+        top: 0;
+        left: 0;
+        pointer-events: none;
+    }
+
+    :root {
+        --element-size: 150px;
+        --element-size1: 50px;
+    }
+
+    body {
+       
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: visible;
+        
+        /* Align items with space in between */
+    }
+
+
+    .P {
+        position: absolute;
+        left: 35.5%;
+        bottom: 5%;
+        border-radius: 100%;
+        background-color: whitesmoke;
+        width: var(--element-size1);
+        height: var(--element-size1);
+    }
+
+    .TX {
+        position: absolute;
+        left: 15.5%;
+        bottom: 45%;
+    }
+
+    .F img, .M img {
+        position: absolute;
+    }
+
+
+
+    .FONT {
+        font-size: 10px;
+        width: 150px;
+        margin: 0 0 0 0;
+        color: black;
+    }
+
+
+
+    .circle {
+        height: 150px;
+        ; /* Set element height using the CSS variable */
+        width: 150px;
+        border-radius: 50%;
+        background-color: pink;
+        position: relative;
+        border: 1px solid #ccc;
+        margin-right: 20px;
+        max-height: 150px;
+        max-width: 150px;
+        display: inline-block;
+    }
+
+        .circle:hover {
+            background-color: #ff8080; /* Change background color on hover */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add box-shadow effect on hover */
+        }
+
+        .circle:active {
+            background-color: yellow; /* Change background color when clicking */
+        }
+
+    .square {
+        height: 150px; /* Set element height using the CSS variable */
+        width: 150px;
+        background-color: lightblue;
+        position: relative;
+        border-radius: 7%;
+        margin-right: 20px;
+        max-height: 150px;
+        max-width: 150px;
+        display: inline-block;
+    }
+
+        .square:hover {
+            background-color: lightblue; /* Change background color on hover */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add box-shadow effect on hover */
+        }
+
+        .square:active {
+            background-color: yellow; /* Change background color when clicking */
+        }
+
+
+    .arrow {
+        margin: 5px;
+        font-size: 20px;
+        color: #ccc;
+    }
+
+</style>
+
+<div class="family-tree">
+    @{
+        var family = await Orchard.GetContentItemByAliasAsync("alias:familytree-data");
+        var allFamilyMembersunsorted = Functions.GetFamilyMembers(family);
+        var allFamilyMembers = allFamilyMembersunsorted.OrderBy(p => p.Gender == "Female")
+        .ToList();
+        var generations = new List<int>();
+
+        var familyorederedbymarried = new List<PersonViewModel>();
+        var toberemoved = new List<PersonViewModel>();
+        var maxgeneration = 0;
+        foreach (var menber in allFamilyMembers)
+        {
+
+            foreach (var menber2 in allFamilyMembers)
+            {
+                if (menber.Name == menber2.Father || menber.Name == menber2.Mother)
+                {
+                    menber.Children.Add(menber2);
+                }
+            }
+        }
+        foreach (var menber in allFamilyMembers.ToList())
+        {
+            wellform(allFamilyMembers, menber);
+
+        }
+        void wellform(List<PersonViewModel> allFamilyMembers, PersonViewModel menber)
+        {
+
+            if ((menber.Wife != null && menber.Wife != "") && menber.Gender == "Male")
+            {
+
+
+                familyorederedbymarried.Add(menber);
+
+                foreach (var menber2 in allFamilyMembers.ToList())
+                {
+
+                    if (menber2.Husband != null)
+                    {
+
+
+                        if (menber.Wife.Contains(menber2.Name) && (menber2.Husband.Contains(menber.Name)))
+                        {
+                            familyorederedbymarried.Add(menber2);
+                            toberemoved.Add(menber2);
+
+                        }
+                    }
+                    if (menber.Children.Contains(menber2))
+                    {
+                        if ((menber2.Husband != null && menber2.Husband != "") && menber2.Gender == "Female")
+                        {
+                            foreach (var menber3 in allFamilyMembers.ToList())
+                            {
+                                if (menber3.Wife != null)
+                                {
+                                    if (menber3.Wife.Contains(menber2.Name) && (menber2.Husband.Contains(menber3.Name)))
+                                    {
+                                        familyorederedbymarried.Add(menber3);
+
+                                        toberemoved.Add(menber3);
+                                        wellform1(allFamilyMembers, menber3);
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            familyorederedbymarried.Add(menber2);
+                            toberemoved.Add(menber2);
+                            wellform1(allFamilyMembers, menber2);
+                        }
+
+
+                    }
+                }
+                toberemoved.Add(menber);
+
+            }
+
+        }
+        void wellform1(List<PersonViewModel> allFamilyMembers, PersonViewModel menber)
+        {
+
+            if ((menber.Wife != null && menber.Wife != "") && menber.Gender == "Male")
+            {
+
+
+
+
+                foreach (var menber2 in allFamilyMembers.ToList())
+                {
+
+                    if (menber2.Husband != null)
+                    {
+
+
+                        if (menber.Wife.Contains(menber2.Name) && (menber2.Husband.Contains(menber.Name)))
+                        {
+                            familyorederedbymarried.Add(menber2);
+                            toberemoved.Add(menber2);
+
+                        }
+                    }
+                    if (menber.Children.Contains(menber2))
+                    {
+                        if ((menber2.Husband != null && menber2.Husband != "") && menber2.Gender == "Female")
+                        {
+                            foreach (var menber3 in allFamilyMembers.ToList())
+                            {
+                                if (menber3.Wife != null)
+                                {
+                                    if (menber3.Wife.Contains(menber2.Name) && (menber2.Husband.Contains(menber3.Name)))
+                                    {
+                                        familyorederedbymarried.Add(menber3);
+
+                                        toberemoved.Add(menber3);
+                                        wellform1(allFamilyMembers, menber3);
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            familyorederedbymarried.Add(menber2);
+                            toberemoved.Add(menber2);
+                            wellform1(allFamilyMembers, menber2);
+                        }
+
+
+                    }
+                }
+                toberemoved.Add(menber);
+
+            }
+
+
+
+        }
+
+        // If the current item is the one we want to remove, remove it and break the loop
+        foreach (var menber in toberemoved)
+        {
+            for (int i = familyorederedbymarried.Count - 1; i >= 0; i--)
+            {
+                if (familyorederedbymarried[i] == menber)
+                {
+                    familyorederedbymarried.RemoveAt(i);
+                    break;
+                }
+
+            }
+
+        }
+
+        foreach (var menber in allFamilyMembers)
+        {
+            familyorederedbymarried.Add(menber);
+        }
+
+        foreach (var menber in familyorederedbymarried)
+        {
+            if ((menber.Wife != null && menber.Wife != "") && menber.Gender == "Male")
+            {
+                menber.Together.Add(menber);
+                foreach (var menber2 in familyorederedbymarried)
+                {
+                    if (menber2.Husband != null)
+                    {
+                        if (menber.Wife.Contains(menber2.Name) && (menber.Generation == menber2.Generation) && (menber2.Husband.Contains(menber.Name)))
+                        {
+                            menber.wifecount++;
+                            menber.Together.Add(menber2);
+
+                        }
+                    }
+                }
+            }
+        }
+        foreach (var menber in familyorederedbymarried)
+        {
+            generations.Add(Functions.RomanToInt(menber.Generation));
+        }
+        var biggestline = new List<int>();
+        var generationsArray = generations.ToArray();
+        int biggestLine = 0;
+
+        @for (int i = 0; i < generationsArray.Length; i++)
+        {
+            if (maxgeneration <= generationsArray[i])
+            { maxgeneration = generationsArray[i]; }
+
+
+        }
+        for (int i = 0; ((i < generationsArray.Length - 1) && (i < maxgeneration)); i++)
+        {
+            biggestline.Add(generationsArray.Count(c => c == i));
+        }
+
+
+        for (int i = 0; i < biggestline.ToArray().Length - 1; i++)
+        {
+            if (biggestline.ToArray()[i] > biggestline.ToArray()[i + 1])
+            { biggestLine = biggestline.ToArray()[i]; }
+            else
+            { biggestLine = biggestline.ToArray()[i + 1]; }
+        }
+        string GenerateColor(int i)
+        {
+            string[] colorNames = {
+    "AliceBlue", "AntiqueWhite", "Aqua", "Beige", "Bisque",  "BlanchedAlmond"
+    , "BlueViolet", "Brown", "BurlyWood", "CadetBlue", "Chartreuse", "Chocolate", "Coral", "CornflowerBlue",
+    "Cornsilk", "Crimson", "Cyan", "DarkCyan", "DarkGoldenrod", "DarkGray", "DarkGreen", "DarkKhaki",
+    "DarkMagenta", "DarkOliveGreen", "DarkOrange", "DarkOrchid", "DarkRed", "DarkSalmon", "DarkSeaGreen", "DarkSlateBlue",
+    "DarkSlateGray", "DarkTurquoise", "DarkViolet", "DeepPink", "DeepSkyBlue", "DimGray", "DodgerBlue", "Firebrick",
+    "FloralWhite", "ForestGreen", "Fuchsia", "Gainsboro", "GhostWhite", "Gold", "Goldenrod", "Gray", "Green", "GreenYellow",
+    "Honeydew", "HotPink", "IndianRed", "Indigo", "Ivory", "Khaki", "Lavender", "LavenderBlush", "LawnGreen", "LemonChiffon",
+    "LightBlue", "LightCoral", "LightCyan", "LightGoldenrodYellow", "LightGray", "LightGreen", "LightPink", "LightSalmon",
+    "LightSeaGreen", "LightSkyBlue", "LightSlateGray", "LightSteelBlue", "LightYellow", "Lime", "LimeGreen", "Linen", "Magenta",
+    "Maroon", "MediumAquamarine", "MediumBlue", "MediumOrchid", "MediumPurple", "MediumSeaGreen", "MediumSlateBlue", "MediumSpringGreen",
+    "MediumTurquoise", "MediumVioletRed", "MidnightBlue", "MintCream", "MistyRose", "Moccasin", "NavajoWhite", "Navy", "OldLace",
+    "Olive", "OliveDrab", "Orange", "OrangeRed", "Orchid", "PaleGoldenrod", "PaleGreen", "PaleTurquoise", "PaleVioletRed", "PapayaWhip",
+    "PeachPuff", "Peru", "Pink", "Plum", "PowderBlue", "Purple", "Red", "RosyBrown", "RoyalBlue", "SaddleBrown", "Salmon", "SandyBrown",
+    "SeaGreen", "SeaShell", "Sienna", "Silver", "SkyBlue", "SlateBlue", "SlateGray", "Snow", "SpringGreen", "SteelBlue", "Tan", "Teal",
+    "Thistle", "Tomato", "Turquoise", "Violet", "Wheat", "White", "WhiteSmoke", "Yellow", "YellowGreen"
+    };
+
+            // Return the color name based on the index
+            return colorNames[i % colorNames.Length];
+        }
+        int j = 0;
+        foreach (var menber in familyorederedbymarried)
+        {
+
+            if ((menber.Husband != null && menber.Husband != "") && menber.Gender == "Female")
+            {
+                menber.Color = GenerateColor(j);
+                j += 2;
+            }
+        }
+
+
+
+        // Function to recursively render family tree nodes
+        void RenderFamilyTree(PersonViewModel person)
+        {
+            var age = person.DateOfBirth;
+            var cll = (person.Gender == "Male") ? ("square") : ("circle");
+            var clg = "P";
+
+            <a class="@cll" id="@person.Name@person.Mother page1" style="position:relative" href="">
+
+
+                <div class="TX">
+                    <p class="FONT"><b>@person.Name</b></p>
+                    <p class="FONT">
+                        Gender: @person.Gender
+                    </p>
+
+                    <p class="FONT">Age:@(person.DateOfBirth != null ? Functions.CalculateAge(age) : "Unknown") years</p>
+
+                    <p class="FONT">Father: @person.Father</p>
+                    <p class="FONT">Mother: @person.Mother</p>
+
+                </div>
+                <div class="@clg">
+                    @if (person.ImagePath != "")
+                    {
+                        var picsrc = person.ImagePath;
+
+                        <img src="@Url.Content($"~/Media/{picsrc}")" alt="Profile Picture" class="profile-picture" width="100%" height="100%" style="border-radius: 100%;" />
+
+                    }
+
+                </div>
+            </a>
+        }
+
+        <div> @(familyorederedbymarried.Count) members</div>
+
+        <div> @(generationsArray.Length) gencount</div>
+
+
+
+
+
+        @for (int i = 0; i < maxgeneration; i++)
+        {
+            <div id="parentContainer" style="height:150px;position:relative;padding-left:20px;margin-bottom:60px;white-space: nowrap;">
+                <div class="FONT" style="position:absolute;left:0px;bottom:50%;background-color:yellow">
+                    @(Functions.IntToRoman(i + 1))
+                </div>
+
+                @foreach (var familyMember in familyorederedbymarried)
+                {
+                    if (familyMember.Generation == Functions.IntToRoman(i + 1))
+                    {
+                        RenderFamilyTree(familyMember);
+                    }
+                }
+            </div>
+        }
+        <script>
+
+            var bodyElement = document.querySelector("body");
+
+            // Now you can manipulate the body element as needed
+            bodyElement.style.minWidth = "@(biggestLine * 170)px";
+            let pathid;
+            let par;
+            let par1;
+            let mother;
+            let kid;
+            let i = 0;
+            let j = 0;
+            let col;
+            function scrollToElement(elementId) {
+                var element = document.getElementById(elementId);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    let myvar;
+                    let myel;
+                    let myvar2;
+                    let myvar3;
+
+                }
+            }
+        </script>
+
+        @foreach (var familyMember in familyorederedbymarried)
+        {
+            <script>
+                 myvar = "@(familyMember.Name)@(familyMember.Mother) page1";
+                 myvar2 = "@(familyMember.Name)@(familyMember.Mother)_page2";
+                 myvar3 = "Persons#@(familyMember.Name)@(familyMember.Mother)_page2";
+                 myel = document.getElementById(myvar);
+                 myel.setAttribute('href', myvar3);
+                 myel.addEventListener('click', () => { scrollToElement(myvar2) });
+            </script>
+            if ((familyMember.wifecount > 0) && familyMember.Gender == "Male")
+            {    @for (int i = 0; i < familyMember.wifecount; i++)
+                {
+
+                    <script>
+                        pathid = "@familyMember.Name@familyMember.Mother wife @i";
+                        par = "@(familyMember.Together.ToArray()[i].Name)@(familyMember.Together.ToArray()[i].Mother) page1";
+
+                        par1 = "@(familyMember.Together.ToArray()[i + 1].Name)@(familyMember.Together.ToArray()[i + 1].Mother) page1";
+                        function drawConnection(parentId, parent1) {
+                            var parent = document.getElementById(parentId);
+
+
+                            var parentBox = parent.getBoundingClientRect();
+                            var parent1 = document.getElementById(parent1);
+
+
+                            var parentBox1 = parent1.getBoundingClientRect();
+                            var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                            svg.setAttribute("width", "100%");
+                            svg.setAttribute("height", "100%");
+
+
+
+                            var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                            path.setAttribute("id", pathid);
+                            var startX = 0;
+                            startX = parentBox.right - window.pageXOffset;
+
+
+
+                            var startY = parentBox.top + (parentBox.height / 2) - window.pageYOffset;
+                            var endX = parentBox1.left - window.pageXOffset;
+
+                            var endY = parentBox1.top + (parentBox1.height / 2) - window.pageYOffset;
+
+
+
+                            var pathData = `M${startX} ${startY} L ${endX} ${endY}`;
+                            // Calculate the angle of the arrow
+
+
+
+                            path.setAttribute("d", pathData);
+                            path.setAttribute("fill", "none");
+                            path.setAttribute("stroke", "black");
+                            path.setAttribute("stroke-width", "2");
+
+                            svg.appendChild(path);
+                            document.body.appendChild(svg);
+
+
+                        }
+
+
+
+                        function reformconnection2(parentId, parent1, pathId) {
+
+                            var path = document.getElementById(pathId);
+                            var parent = document.getElementById(parentId);
+
+
+                            var parentBox = parent1.getBoundingClientRect();
+                            var parent1 = document.getElementById(parent1);
+
+
+                            var parentBox1 = parent.getBoundingClientRect();
+
+                            var startX = 0;
+                            startX = parentBox.right - window.pageXOffset;
+
+
+
+
+                            var startY = parentBox.top + (parentBox.height / 2) - window.pageYOffset;
+                            var endX = parentBox1.left - window.pageXOffset;
+
+                            var endY = parentBox1.top + (parentBox1.height / 2) - window.pageYOffset;
+
+
+
+                            var pathData = `M${startX} ${startY} L ${endX} ${endY}`;
+
+                            // Calculate the angle of the arrow
+
+
+
+
+
+
+                            path.setAttribute("d", pathData);
+                            path.setAttribute("fill", "none");
+                            path.setAttribute("stroke", "black");
+                            path.setAttribute("stroke-width", "2");
+
+
+                        }
+
+
+                        drawConnection(par, par1)
+
+                        window.addEventListener('resize', () => {
+                            reformconnection(par, par1, pathid);
+                            // Code to execute when the viewport resizes
+
+                        })
+                            ;
+                    </script>
+
+
+                }
+            }
+        }
+
+
+
+
+
+
+        //drawing the svg
+        @foreach (var familyMember in familyorederedbymarried)
+        {
+            if ((familyMember.Children.Count > 0) && (familyMember.wifecount > 0) && familyMember.Gender == "Male")
+            {
+                @foreach (var kid in familyMember.Children)
+                {
+                    @for (int i = 1; i < familyMember.wifecount + 1; i++)
+                    {
+
+                        if (kid.Mother == familyMember.Together.ToArray()[i].Name)
+                        {
+
+                            <script>
+                                pathid = "@(familyMember.Together.ToArray()[i].Name)@(familyMember.Together.ToArray()[i].Mother)@kid.Name@kid.Mother";
+                                mother = "@(familyMember.Together.ToArray()[i].Name)@(familyMember.Together.ToArray()[i].Mother) page1";
+                                kid = "@kid.Name@kid.Mother page1";
+                                col = "@(familyMember.Together.ToArray()[i].Color)";
+
+
+
+
+
+                                function drawConnection(parentId, childId) {
+                                    var parent = document.getElementById(parentId);
+                                    var child = document.getElementById(childId);
+
+                                    var parentBox = parent.getBoundingClientRect();
+                                    var childBox = child.getBoundingClientRect();
+
+                                    var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                                    svg.setAttribute("width", "100%");
+                                    svg.setAttribute("height", "100%");
+
+
+                                    var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                                    path.setAttribute("id", pathid);
+                                    var startX = parentBox.right - parentBox.width - 10 - document.documentElement.scrollLeft;
+                                    var startY = parentBox.top + (parentBox.height / 2) - document.documentElement.scrollTop;
+                                    var endX = childBox.right - (childBox.width / 2) - document.documentElement.scrollLeft;
+                                    var endY = childBox.top - document.documentElement.scrollLeft;
+                                    console.log(startX, "start ", startY);
+                                    console.log(endX, "end ", endY);
+
+
+                                    var pathData = `M${startX} ${startY} L ${startX} ${parentBox.top + (parentBox.height) + 30} L ${endX} ${parentBox.top + (parentBox.height) + 30} L ${endX} ${endY}`;
+
+                                    // Calculate the angle of the arrow
+
+
+
+                                    path.setAttribute("d", pathData);
+                                    path.setAttribute("fill", "none");
+                                    path.setAttribute("stroke", col);
+                                    path.setAttribute("stroke-width", "2");
+
+                                    svg.appendChild(path);
+                                    document.body.appendChild(svg);
+                                }
+
+
+
+                                function reformconnection(parentId, childId, pathId) {
+
+                                    var path = document.getElementById(pathId);
+                                    var parent = document.getElementById(parentId);
+                                    var child = document.getElementById(childId);
+
+                                    var parentBox = parent.getBoundingClientRect();
+                                    var childBox = child.getBoundingClientRect();
+                                    var startX = parentBox.right - parentBox.width - 10 - document.documentElement.scrollLeft;
+                                    var startY = parentBox.top + (parentBox.height / 2) - document.documentElement.scrollTop;
+                                    var endX = childBox.right - (childBox.width / 2) - document.documentElement.scrollLeft;
+                                    var endY = childBox.top - document.documentElement.scrollLeft;
+                                    console.log(startX, "start ", startY);
+                                    console.log(endX, "end ", endY);
+
+
+                                    var pathData = `M${startX} ${startY} L ${startX} ${parentBox.top + (parentBox.height) + 30} L ${endX} ${parentBox.top + (parentBox.height) + 30} L ${endX} ${endY}`;
+
+                                    // Calculate the angle of the arrow
+
+
+
+
+                                    path.setAttribute("d", pathData);
+                                    path.setAttribute("fill", "none");
+                                    path.setAttribute("stroke", col);
+                                    path.setAttribute("stroke-width", "2");
+
+
+                                }
+
+                                drawConnection(mother, kid);
+                                document.addEventListener("DOMContentLoaded", function (event) {
+                                    reformconnection(mother, kid, pathid);
+                                });
+
+
+                                window.addEventListener('resize', () => {
+                                    reformconnection(mother, kid, pathid);
+                                    // Code to execute when the viewport resizes
+
+
+                                });
+                            </script>
+                        }
+                    }
+                }
+
+            }
+
+
+        }
+
+    }
+</div>

@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C61A2CB8-1F93-43F3-B50E-21BA14BCDA49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamilyTree.Web", "src\FamilyTree.Web\FamilyTree.Web.csproj", "{E679A23A-C521-4EFE-86C1-D9D3CE405723}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{A8053287-CE53-4E9C-9C5C-7B838348AA47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamilyTreeProject.Core", "src\Modules\FamilyTreeProject.Core\FamilyTreeProject.Core.csproj", "{CA9B9297-1B58-4511-827F-B89C3473DC0A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Themes", "Themes", "{64E95EB8-6932-4E52-AB25-EF2B8BAE51EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamilyTreeProject.Theme", "src\Themes\FamilyTreeProject.Theme\FamilyTreeProject.Theme.csproj", "{F3992D48-8D11-4547-B6BA-C032DD43F08A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E679A23A-C521-4EFE-86C1-D9D3CE405723}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E679A23A-C521-4EFE-86C1-D9D3CE405723}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E679A23A-C521-4EFE-86C1-D9D3CE405723}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E679A23A-C521-4EFE-86C1-D9D3CE405723}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA9B9297-1B58-4511-827F-B89C3473DC0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA9B9297-1B58-4511-827F-B89C3473DC0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA9B9297-1B58-4511-827F-B89C3473DC0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA9B9297-1B58-4511-827F-B89C3473DC0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3992D48-8D11-4547-B6BA-C032DD43F08A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3992D48-8D11-4547-B6BA-C032DD43F08A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3992D48-8D11-4547-B6BA-C032DD43F08A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3992D48-8D11-4547-B6BA-C032DD43F08A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E679A23A-C521-4EFE-86C1-D9D3CE405723} = {C61A2CB8-1F93-43F3-B50E-21BA14BCDA49}
+		{A8053287-CE53-4E9C-9C5C-7B838348AA47} = {C61A2CB8-1F93-43F3-B50E-21BA14BCDA49}
+		{CA9B9297-1B58-4511-827F-B89C3473DC0A} = {A8053287-CE53-4E9C-9C5C-7B838348AA47}
+		{64E95EB8-6932-4E52-AB25-EF2B8BAE51EA} = {C61A2CB8-1F93-43F3-B50E-21BA14BCDA49}
+		{F3992D48-8D11-4547-B6BA-C032DD43F08A} = {64E95EB8-6932-4E52-AB25-EF2B8BAE51EA}
+	EndGlobalSection
+EndGlobal

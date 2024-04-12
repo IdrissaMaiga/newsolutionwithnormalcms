@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="C:\Users\Mon PC\.nuget\packages\orchardcore.module.targets\1.8.2\build\Package.Build.props" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="OrchardCore.Theme.Targets" Version="1.8.2" />
+		<PackageReference Include="OrchardCore.ContentManagement" Version="1.8.2" />
+		<PackageReference Include="OrchardCore.DisplayManagement" Version="1.8.2" />
+		<PackageReference Include="OrchardCore.ResourceManagement" Version="1.8.2" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="OrchardCore.Logging.NLog" Version="1.8.2" />
+		<PackageReference Include="OrchardCore.Application.Cms.Targets" Version="1.8.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\Modules\FamilyTreeProject.Core\FamilyTreeProject.Core.csproj" />
+	</ItemGroup>
+
+</Project>
